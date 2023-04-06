@@ -11,15 +11,7 @@ In this blog-post, we will look at **prompt tuning**, a clean and extremely effi
 Prompt tuning adds additional trainable tokens at the input and fine tunes them to a specific task instead of fine tuning the entire model. Intuitively, it can be seen as adding a continuous task-description embedding that only the model understands at the beginning of an input, and reusing this embedding across all instances of one task. We improve the task-description embedding with fine tuning and leave the model untouched.
 
 <p align="center"><img src="Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/prompt_tuning_diagram.png" alt="Material Bread logo" ></p>
-<p align = "center">Fig.1 - 4K Mountains Wallpaper</p>
-
-| ![space-1.jpg](Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/prompt_tuning_diagram.png) | 
-|:--:| 
-| *Figure 1: Prompt Tuning [5]* |
-
-![Figure 1: Prompt Tuning [5]](Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/prompt_tuning_diagram.png)
-
-                                               Figure 1: Prompt Tuning [5]
+<p align = "center">Figure 1: Prompt Tuning [5]</p>
 
 Cool right? Add some embeddings to the input in the beginning and the model does the rest because it has learned to recognize the embeddings to do a specific task. Now let’s see how this works.
 
@@ -36,9 +28,9 @@ Before we start with the technical jargon, let’s define some experimental sett
 
 For the task scenario depicted in Table 1, we start by picking up a pre-trained T5 [6] model from our dear friends at Google. A direct deployment for the input/output pair shown in the Table is not possible, since T5 has been trained on span corruption, which gives it a distorted understanding of grammar. We start by converting it into a causal LM by additionally pre-training  T5 for 100K steps with a causal language modelling objective (i.e., predict the next word). This is shown in Figure 2.
 
-![                                                    Figure 2: Updating T5 to fit NLU tasks](Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/span_corrputionlm_ft(1).png)
 
-                                                    Figure 2: Updating T5 to fit NLU tasks
+<p align="center"><img src="Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/span_corrputionlm_ft(1).png" alt="Material Bread logo" ></p>
+<p align = "center">Figure 2: Updating T5 to fit NLU tasks</p>
 
 Now that we have a model that can generate the input-output pairs we want, let’s get busy fine tuning. Or not… 
 
