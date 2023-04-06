@@ -12,7 +12,7 @@ Prompt tuning adds additional trainable tokens at the input and fine tunes them 
 
 <p align="center">
 
-    <img src="Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/prompt_tuning_diagram.png" alt="Material Bread logo">
+    <img width="200" src="Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/prompt_tuning_diagram.png" alt="Material Bread logo" >
 
 </p>
 
