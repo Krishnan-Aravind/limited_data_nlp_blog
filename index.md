@@ -10,9 +10,11 @@ In this blog-post, we will look at **prompt tuning**, a clean and extremely effi
 
 Prompt tuning adds additional trainable tokens at the input and fine tunes them to a specific task instead of fine tuning the entire model. Intuitively, it can be seen as adding a continuous task-description embedding that only the model understands at the beginning of an input, and reusing this embedding across all instances of one task. We improve the task-description embedding with fine tuning and leave the model untouched.
 
-{% figure caption:"Figure 1: Prompt Tuning [5]" %}
-    ![Le logo de Jekyll](Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/prompt_tuning_diagram.png)
-{% endfigure %}
+<p align="center">
+
+    <img src="Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/prompt_tuning_diagram.png" alt="Material Bread logo">
+
+</p>
 
 | ![space-1.jpg](Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/prompt_tuning_diagram.png) | 
 |:--:| 
@@ -52,6 +54,7 @@ The typical story here is to fine tune the updated T5 model for each of our task
             Figure 3: Adding soft prompts to the input
 
 For the sake of simplification, let us assume that the prompts have been random initialized. The next step is to fine tune them with a frozen model. We use the language-modelling adapted T5 that was built earlier. The soft prompts are trained for 30K steps and viola! we have a trained prompt that can be used for inference for a particular task. And we didn’t touch the model at all! 
+
 
 ![                                                  Figure 4: Training Soft Prompts](Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/span_corrputionlm_ft_prompt(3).png)
 
