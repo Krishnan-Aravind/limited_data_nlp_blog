@@ -38,16 +38,14 @@ Now that we have a model that can generate the input-output pairs we want, let�
 
 The typical story here is to fine tune the updated T5 model for each of our tasks. But this approach is parameter inefficient, and we need to store one fine tuned model each for individual tasks. In Prompt tuning, we add trainable prompts to the input and fine tune them for each task. The idea is simple: We add $k$ “imaginary” words before the actual input and let the model fine tune these imaginary words into cues it can understand to do a particular task. The model left untouched and can be reused again for another task, by simply changing the prompts.
 
-![            Figure 3: Adding soft prompts to the input](Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/span_corrputionlm_ft_prompt(1).png)
 
-            Figure 3: Adding soft prompts to the input
+<p align="center"><img src="Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/span_corrputionlm_ft_prompt(1).png" alt="Material Bread logo" ></p>
+<p align = "center">Figure 3: Adding soft prompts to the input</p>
 
 For the sake of simplification, let us assume that the prompts have been random initialized. The next step is to fine tune them with a frozen model. We use the language-modelling adapted T5 that was built earlier. The soft prompts are trained for 30K steps and viola! we have a trained prompt that can be used for inference for a particular task. And we didn’t touch the model at all! 
 
-
-![                                                  Figure 4: Training Soft Prompts](Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/span_corrputionlm_ft_prompt(3).png)
-
-                                                  Figure 4: Training Soft Prompts
+<p align="center"><img src="Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/span_corrputionlm_ft_prompt(3).png" alt="Material Bread logo" ></p>
+<p align = "center">Figure 4: Training Soft Prompts</p>
 
 <aside>
 💡  The continuous prompts are defined and fine tuned in the embedding space, so don’t expect to map them back into a lexical unit after fine tuning.
@@ -58,11 +56,9 @@ For the sake of simplification, let us assume that the prompts have been random 
 
 - Prompt Tuning uses less than 0.01% task-specific parameters for models with over a billion parameters, becoming the most parameter efficient approach on the market.
 - Prompt Tuning competes with fine tuning at large model sizes.
-    
-    ![             Figure 5: Comparing Prompt Tuning with Fine Tuning (Model Tuning)](Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/Screenshot_from_2023-01-10_18-37-03.png)
-    
-                 Figure 5: Comparing Prompt Tuning with Fine Tuning (Model Tuning)
-    
+            <p align="center"><img src="Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/Screenshot_from_2023-01-10_18-37-03.png" alt="Material Bread logo" ></p>
+            <p align = "center">Figure 5: Comparing Prompt Tuning with Fine Tuning (Model Tuning)</p>
+
 - But the performance gap is still significant for small model sizes: Fine tuning seems to provide significantly better numbers in these cases 💩
 
 # SPoT!
