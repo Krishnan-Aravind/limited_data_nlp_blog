@@ -82,7 +82,7 @@ Note that SPoT works exactly like Prompt tuning once prompt transfer is done. Th
 
 ## PS: Where to SPoT?
 
-SPoT works exceptionally well when we reuse prompts from similar tasks, but the question remains as to how one finds an optimal task to transfer prompts from. It sounds too time consuming to use a validation set to cross verify transferability across exhaustive combinations, so the authors provide a pipeline to select the optimal source task from a hyperplane of possible options. Their idea is to compare tasks in the prompt domain to see if they are close enough to benefit from each other. The mechanism is as follows:
+SPoT works exceptionally well when we reuse prompts from similar tasks, but the question remains as to how one finds an optimal task to transfer prompts from. It sounds very time consuming to use a validation set to cross verify transferability across exhaustive combinations, so the authors provide a pipeline to select the optimal source task from a hyperplane of possible options. Their idea is to compare tasks in the prompt domain to see if they are close enough to benefit from each other. The mechanism is as follows:
 
 1. Train prompts for the target task and the source tasks with standard initialization, for 100K steps each
 2. Project all resulting prompts into a vector space and compute cosine similarities of every source prompt from the target prompt
