@@ -1,4 +1,4 @@
-<p align = "right">Aravind Krishnan</p>
+<p align = "right">Author: Aravind Krishnan</p>
 # Prompt Tuning and Transfer
 
 # Introduction
