@@ -65,15 +65,14 @@ For the sake of simplification, let us assume that the prompts have been random 
 
 The performance drop of prompt tuning at small model sizes affect a large majority of users who cannot afford large models. The authors of [8] introduce SPoT, a prompt “sharing” mechanism that remedies this issue. The core idea of Soft Prompt Transfer (SPoT) is to reuse the prompts trained for a task in initializing prompts for similar tasks. As shown in Figure 6, we start by tuning prompts for a source task that is close to our target task and simply copy the source prompts for the target task . The target prompts are then tuned as usual.
 
-                                                 Figure 6: Prompt Transfer mechanism
 
-![screenshot.png](Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/screenshot.png)
+<p align="center"><img src="Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/screenshot.png" alt="Material Bread logo" ></p>
+<p align = "center">Figure 6: Prompt Transfer mechanism</p>
 
 Note that SPoT works exactly like Prompt tuning once prompt transfer is done. The training is equally prompt efficient as the original approach, with differences being confined to the initialization strategy.  **Experiments with the SuperGLUE benchmark show that SPoT outperforms Prompt Tuning and competes with Fine Tuning across all model sizes.** 
 
-![                                                      Figure 7: SPoT Performance](Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/Screenshot_from_2023-01-15_16-01-37.png)
-
-                                                      Figure 7: SPoT Performance
+<p align="center"><img src="Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/Screenshot_from_2023-01-15_16-01-37.png" alt="Material Bread logo" ></p>
+<p align = "center">Figure 7: SPoT Performance</p>
 
 ## PS: Where to SPoT?
 
@@ -84,9 +83,8 @@ SPoT works exceptionally well when we reuse prompts from similar tasks, but the 
 3. Choose the source prompt that is closes to the target prompt in terms of cosine similarity.
 4. Use this source prompt for SPoT by retraining the target prompt with source initialization
 
-![                              Figure 8: Fining the optimal Source Prompt for SPoT](Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/Task_Selection.drawio(2).png)
-
-                              Figure 8: Fining the optimal Source Prompt for SPoT
+<p align="center"><img src="Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/Task_Selection.drawio(2).png" alt="Material Bread logo" ></p>
+<p align = "center">Figure 8: Fining the optimal Source Prompt for SPoT</p>
 
 They perform a lot of experiments and confirm that this approach works well enough for everyday programmers. This makes it easy to find the optimal source task to implement prompt transfer. 
 
