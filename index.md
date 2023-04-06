@@ -1,5 +1,3 @@
-# Prompt Tuning and Transfer
-
 # Introduction
 
 Parameter-efficient fine tuning has garnered significant attention in the recent years ever since the size of SOTA models (and the inflation rates) started going up exponentially high. Consequently, several approaches have been proposed to preserve model efficiency while training on a mere fraction of the model’s parameters. Some examples include Adapters[1], BitFit [2] and prefix tuning [3]. A major limitation of these approaches is the fact that they sacrifice model performance in the race for parameter efficiency.
