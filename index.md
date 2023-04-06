@@ -10,7 +10,7 @@ In this blog-post, we will look at **prompt tuning**, a clean and extremely effi
 
 Prompt tuning adds additional trainable tokens at the input and fine tunes them to a specific task instead of fine tuning the entire model. Intuitively, it can be seen as adding a continuous task-description embedding that only the model understands at the beginning of an input, and reusing this embedding across all instances of one task. We improve the task-description embedding with fine tuning and leave the model untouched.
 
-<figure><img src="Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/prompt_tuning_diagram.png"><figcaption align = "center"><b>Fig.1 - 4K Mountains Wallpaper</b></figcaption></figure>
+<figure><img src="Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/prompt_tuning_diagram.png"><figcaption align = "right"><b>Fig.1 - 4K Mountains Wallpaper</b></figcaption></figure>
 
 ![                                                                      Figure 1: Prompt Tuning [5]](Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/prompt_tuning_diagram.png)
 
