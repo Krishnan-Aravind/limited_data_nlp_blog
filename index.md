@@ -1,4 +1,4 @@
-<p align = "right">Figure 1: Prompt Tuning [5]</p>
+<p align = "right">Aravind Krishnan</p>
 # Prompt Tuning and Transfer
 
 # Introduction
