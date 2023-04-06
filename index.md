@@ -18,7 +18,7 @@ Prompt tuning adds additional trainable tokens at the input and fine tunes them 
 blah blah blah
 ![Figure 1: Prompt Tuning [5]](Prompt%20Tuning%20and%20Transfer%20679d90333015413eb8145a4e8fa68419/prompt_tuning_diagram.png)
 
-                                          Figure 1: Prompt Tuning [5]
+                                               Figure 1: Prompt Tuning [5]
 
 Cool right? Add some embeddings to the input in the beginning and the model does the rest because it has learned to recognize the embeddings to do a specific task. Now let’s see how this works.
 
